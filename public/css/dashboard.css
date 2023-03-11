@@ -15,23 +15,15 @@ body {
 
 .container {
   max-height: 100vh;
-  max-width: 1440px;
 }
 
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   margin-bottom: 50px;
-  position: absolute;
-  max-width: 100%;
-  visibility: visible;
-  background-size: cover;
   position: fixed;
-  background-color: white;
-}
-.header span {
-  margin-left: 1000px;
+  height: 100px;
 }
 
 .navigation {
@@ -39,7 +31,6 @@ body {
   display: flex;
   width: 200px;
   position: fixed;
-  margin-top: 100px;
 }
 
 button {
@@ -64,24 +55,16 @@ button:hover {
 }
 
 .content {
-  display: block;
+  display: flex;
 }
 
-.register-land,
-.transfer-land,
-.profile,
-.log-out {
-  visibility: hidden;
-}
 .register-land form,
 .transfer-land form,
-.profile form,
 .log-out form {
   gap: 10px;
 }
 .register-land input,
 .transfer-land input,
-.profile input,
 .log-out input {
   width: 350px;
   height: 49px;
@@ -93,8 +76,6 @@ button:hover {
 .register-land #logOut,
 .transfer-land input[type=submit],
 .transfer-land #logOut,
-.profile input[type=submit],
-.profile #logOut,
 .log-out input[type=submit],
 .log-out #logOut {
   width: 192px;
@@ -109,7 +90,6 @@ button:hover {
 }
 .register-land textarea,
 .transfer-land textarea,
-.profile textarea,
 .log-out textarea {
   width: 350px;
   padding: 10px;
@@ -118,14 +98,12 @@ button:hover {
 }
 .register-land input[type=button],
 .transfer-land input[type=button],
-.profile input[type=button],
 .log-out input[type=button] {
   width: 192px;
   height: 49px;
 }
 .register-land #cancel,
 .transfer-land #cancel,
-.profile #cancel,
 .log-out #cancel {
   border: solid 2px #001aff;
   border-radius: 10px;
@@ -167,74 +145,27 @@ button:hover {
   top: 0;
   z-index: 999;
   position: absolute;
+  border: #001aff solid 2px;
   top: 12%;
-  left: 28%;
-}
-
-.register-land-visible,
-.transfer-land-visible,
-.profile-visible {
-  visibility: visible;
-  right: 28%;
-  margin-left: 250px;
-  top: 10%;
-  max-height: 100vh;
-}
-.register-land-visible form,
-.transfer-land-visible form,
-.profile-visible form {
-  gap: 10px;
-}
-.register-land-visible input,
-.transfer-land-visible input,
-.profile-visible input {
-  width: 350px;
-  height: 49px;
-  padding: 10px;
-  color: #001aff;
-  font-size: 16px;
-}
-.register-land-visible input[type=submit],
-.register-land-visible #logOut,
-.transfer-land-visible input[type=submit],
-.transfer-land-visible #logOut,
-.profile-visible input[type=submit],
-.profile-visible #logOut {
-  width: 192px;
-  height: 49px;
-  color: white;
-  background-color: #001aff;
-  font-weight: bold;
-  font-size: 16px;
-  border: none;
-  border-radius: 10px;
-  margin-top: 25px;
-}
-.register-land-visible textarea,
-.transfer-land-visible textarea,
-.profile-visible textarea {
-  width: 350px;
-  padding: 10px;
-  color: #001aff;
-  font-size: 16px;
-}
-.register-land-visible input[type=button],
-.transfer-land-visible input[type=button],
-.profile-visible input[type=button] {
-  width: 192px;
-  height: 49px;
-}
-.register-land-visible #cancel,
-.transfer-land-visible #cancel,
-.profile-visible #cancel {
-  border: solid 2px #001aff;
-  border-radius: 10px;
-  color: #001aff;
-  background-color: transparent;
+  right: 10%;
 }
 
 .home {
-  margin-left: 250px;
-  margin: top 100px;
-  font-size: 20px;
+  visibility: hidden;
+}
+
+.register-land {
+  visibility: hidden;
+}
+
+.header {
+  visibility: hidden;
+}
+
+.transfer-land {
+  visibility: hidden;
+}
+
+.profile {
+  visibility: hidden;
 }/*# sourceMappingURL=dashboard.css.map */

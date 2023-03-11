@@ -15,23 +15,15 @@ body {
 
 .container {
     max-height: 100vh;
-    max-width: 1440px;
 }
 
 .header {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     margin-bottom: 50px;
-    position: absolute;
-    max-width: 100%;
-    visibility: visible;
-    background-size: cover;
     position: fixed;
-    background-color: white;
-    span {
-        margin-left: 1000px;
-    }
+    height: 100px;
 }
 
 .navigation {
@@ -39,7 +31,6 @@ body {
     display: flex;
     width: 200px;
     position: fixed;
-    margin-top: 100px;
 }
 
 button {
@@ -64,14 +55,14 @@ button:hover {
 }
 
 .content {
-    display: block
+    display: flex;
+    // background-size: cover;
+    // position: relative;
 }
 
 .register-land,
 .transfer-land,
-.profile,
 .log-out {
-    visibility: hidden;
     form {
         gap: 10px;
     }
@@ -147,61 +138,27 @@ button:hover {
     top: 0;
     z-index: 999;
     position: absolute;
+    border: #001aff solid 2px;
     top: 12%;
-    left: 28%;
-}
-
-.register-land-visible,
-.transfer-land-visible,
-.profile-visible {
-    visibility: visible;
-    right: 28%;
-    margin-left: 250px;
-    top: 10%;
-    max-height: 100vh;
-    form {
-        gap: 10px;
-    }
-    input {
-        width: 350px;
-        height: 49px;
-        padding: 10px;
-        color: #001aff;
-        font-size: 16px;
-    }
-    input[type="submit"],
-    #logOut {
-        width: 192px;
-        height: 49px;
-        color: white;
-        background-color: #001aff;
-        font-weight: bold;
-        font-size: 16px;
-        border: none;
-        border-radius: 10px;
-        margin-top: 25px;
-    }
-    textarea {
-        width: 350px;
-        padding: 10px;
-        color: #001aff;
-        font-size: 16px;
-    }
-    input[type="button"] {
-        width: 192px;
-        height: 49px;
-    }
-    #cancel {
-        border: solid 2px #001aff;
-        // background-color: #7c85d2;
-        border-radius: 10px;
-        color: #001aff;
-        background-color: transparent;
-    }
+    right: 10%;
 }
 
 .home {
-    margin-left: 250px;
-    margin: top 100px;
-    font-size: 20px;
+    visibility: hidden;
+}
+
+.register-land {
+    visibility: hidden;
+}
+
+.header {
+    visibility: hidden;
+}
+
+.transfer-land {
+    visibility: hidden;
+}
+
+.profile {
+    visibility: hidden;
 }
