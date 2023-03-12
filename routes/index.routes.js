@@ -7,6 +7,6 @@ module.exports = app => {
     
     app.get('/signup', indexController.signupPageRender)
 
-    app.get('/dashboard',indexController.dashboardPageRender)
+    app.get('/client-dashboard',indexController.dashboardPageRender)
 
 }

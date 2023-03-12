@@ -34,6 +34,7 @@ exports.verify_user = async (email, password) => {
 }
 
 exports.getPassword = async email => {
-    const rows = await con.promise().query(`SELECT password FROM users WHERE email ='${email}'`)
-    return rows[0][0].password
+    const rows = await con.promise().query(`SELECT password,users.role_id FROM users WHERE email ='${email}'`)
+    console.log(rows[0][0])
+    return rows[0][0]
 }

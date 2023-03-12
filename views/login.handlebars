@@ -62,6 +62,7 @@
                 user_password
             })
         }).then(res => res.json())
+        console.log(result)
 
         if (result.status === 'ok') {
             displayMessage("alert-success", result.message);
@@ -69,7 +70,10 @@
             document.getElementById('password').value = ''
 
             setTimeout(() => {
-                document.location = '/dashboard'
+                if (result.role_id === 3) {
+                    document.location = '/client-dashboard'
+                }
+
             }, 1000)
 
         } else if (result.status === 'error') {

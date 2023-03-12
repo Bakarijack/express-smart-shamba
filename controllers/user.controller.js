@@ -75,12 +75,12 @@ exports.loginProcess = async (req, res, next) => {
     try{
         const result = await userModal.getPassword(user_email)
         console.log(result)
-        if (await bcrypt.compare(user_password, result)){
+        if (await bcrypt.compare(user_password, result.password)){
             const token = jwt.sign({
                 user_email: user_email
             }, JWT_SECRET)
 
-            return res.json({ 'status': 'ok', 'message': 'Successfully signed', 'data': token})
+            return res.json({ 'status': 'ok', 'message': 'Successfully signed', 'data': token,'role_id': result.role_id})
         }
     }catch(e){
         console.log(e)

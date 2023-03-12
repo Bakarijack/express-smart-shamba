@@ -6,4 +6,4 @@ exports.loginPageRender = (req, res, next) => res.render('login', { layout: 'aut
 exports.signupPageRender = (req, res, next) => res.render('signup', { layout: 'auth'})
 
 
-exports.dashboardPageRender = (req, res, next) => res.sendFile('public/Dashboard.html', { root: '.'})
+exports.dashboardPageRender = (req, res, next) => res.render('client_dashboard', { layout:'dashboard'})
