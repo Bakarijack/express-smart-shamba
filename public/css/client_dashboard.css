@@ -1,3 +1,5 @@
+@import url('../../node_modules/font-awesome/css/font-awesome.min.css');
+
 body{
     background-color: #eee;
 }
@@ -17,6 +19,8 @@ body{
     background-image: -moz-linear-gradient(0deg, #bfacff 0%, #795fff 100%);
     background-image: -webkit-linear-gradient(0deg, #bfacff 0%, #795fff 100%);
     background-image: -ms-linear-gradient(0deg, #bfacff 0%, #795fff 100%);
+    display: flex;
+    flex-direction: column;
 }
 
 .right-menu{
@@ -27,9 +31,25 @@ body{
     width: 20%;
     background-color: rgb(225, 218, 247);
     border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    transition: height, width 1s;
 }
 
 .dash-logo{
     height: 3.5em;
-    width: 3.8em;    
+    width: 100%;    
+}
+
+@media screen and (max-width: 985px) {
+    .left-menu{
+        display: none;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .right-menu{
+        height: 2.5em;
+        width: 40%;
+    }
 }
