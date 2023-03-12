@@ -11,6 +11,8 @@
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.3.0",
     "bcryptjs": "^2.4.3",
+    "billboard.js": "^3.7.0-next.3",
+    "chart.js": "^4.2.1",
     "express": "^4.18.2",
     "express-handlebars": "^7.0.2",
     "font-awesome": "^4.7.0",
