@@ -10,7 +10,9 @@ app.use(express.static('public'))
 
 app.engine('handlebars', expressHandlebars.engine({
     extname: 'handlebars',
-    defaultLayout: 'main'
+    defaultLayout: 'main',
+    layoutsDir: __dirname+'/views/layouts/',
+    partialsDir: __dirname+ '/views/partials/'
 }))
 
 app.set('view engine', 'handlebars')
