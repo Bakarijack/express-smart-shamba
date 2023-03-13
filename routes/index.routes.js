@@ -9,4 +9,6 @@ module.exports = app => {
 
     app.get('/client-dashboard',indexController.dashboardPageRender)
 
+    app.get('/register-land',indexController.registerLandPageRender)
+
 }
