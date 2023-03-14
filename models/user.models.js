@@ -9,6 +9,14 @@ exports.addUser = async (username, email, password) => {
     return row
 }
 
+
+exports.addAdmin = async (username, email, password,role_id) => {
+    const row = await con.promise().query(`INSERT INTO users (username, email, password,role_id) VALUES ('${username}', '${email}', '${password}','${role_id}')`)
+    console.log(row)
+    
+    return row
+}
+
 exports.is_userExist = async (email) => {
     let count
     
@@ -46,3 +54,4 @@ exports.registerLand = async (owner_name,added_by, id_num, land_num, title_num, 
     
     return row
 }
+

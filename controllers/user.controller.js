@@ -110,3 +110,55 @@ exports.register_landProcess =async (req, res, next) => {
         return res.json({ status: 'error', 'message':'Something went wrong. Try again', 'e': '1'})
     }
 }
+
+
+exports.adminSignupProcess = async (req, res, next) => {
+    console.log(req.body)
+
+    const { username, user_email, password: passPlainText, c_password} = req.body
+
+    if (passPlainText !== c_password){
+        return res.json({ 'status': 'error', 'message': 'Passwords not match'})
+    } 
+1 
+    if (passPlainText.length < 8){
+        return res.json({ 'status': 'error', 'message': '8 digit character password required'})
+    }
+
+    // check if the username is taken
+    try{
+        const result = await userModal.is_usernameTaken(username)
+        console.log(result)
+        if (result > 0){
+            return res.json({ 'status': 'error', 'message': 'Username already taken. Try another one'})
+        }
+    }catch(e){
+        console.log(e)
+        return res.json({ 'status': 'error', 'message': 'Something went wrong. Try again', 'e': '1'})
+    }
+
+    // check if the user exist
+    try{
+        const result = await userModal.is_userExist(user_email)
+        console.log(result)
+
+        if (result > 0){
+            return res.json({ 'status': 'error', 'message': 'User exist. Try to login'})
+        }
+    }catch(err){
+        console.log(err)
+        return res.json({ 'status': 'error', 'message': 'Something went wrong. Try again', 'e': '2'})
+    }
+
+    const password = await bcrypt.hash(passPlainText, 10)
+    console.log(password)
+
+    // add the user in the database
+    try{
+        const user = await userModal.addAdmin(username, user_email, password,1)
+        return res.json({ 'status': 'ok', 'message': 'Account created successfully'})
+    }catch(e){
+        console.log(e)
+        return res.json({ 'status': 'error', 'message': 'Something went wrong. Try again', 'e': '3'})
+    }    
+}

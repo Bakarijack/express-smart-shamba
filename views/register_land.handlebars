@@ -24,7 +24,7 @@
             <div class="container left-bottom">
                 <a href='/client-dashboard'><i class="fa fa-home btn" id="home-btn" aria-hidden="true"></i></a>
                 <a href='/register-land'><i class="fa fa-file-upload btn" id="add-land" aria-hidden="true"></i></a>
-                <a href=""><i class="fa fa-file-clipboard btn" aria-hidden="true"></i></a>
+                <a href='/registered-lands-list'><i class="fa fa-file-clipboard btn" aria-hidden="true"></i></a>
                 <a href=""><i class="fa fa-file-export btn" aria-hidden="true"></i></a>
                 <a href=""><i class="fa fa-file-edit btn" aria-hidden="true"></i></a>
             </div>
@@ -180,15 +180,6 @@
                 const map_num = document.getElementById('map_num').value
                 const land_size = document.getElementById('land_size').value
 
-                console.log(owner_name)
-                console.log(id_num)
-                console.log(land_num)
-                console.log(title_num)
-                console.log(seal)
-                console.log(date_of_issue)
-                console.log(map_num)
-                console.log(land_size)
-
                 //const tkn = localStorage.getItem('token'),
                 const result = await fetch('/api/register-land/process', {
                     method: 'POST',
@@ -211,6 +202,16 @@
                 console.log(result)
                 if (result.status === 'ok') {
                     displayMessage("alert-success", result.message);
+
+                    document.getElementById('owner_name').value = ''
+                    document.getElementById('id_num').value = ''
+                    document.getElementById('land_num').value = ''
+                    document.getElementById('title_num').value = ''
+                    document.getElementById('seal').value = ''
+                    document.getElementById('date_of_issue').value = ''
+                    document.getElementById('map_num').value = ''
+                    document.getElementById('land_size').value = ''
+
                 } else if (result.status === 'error') {
                     displayMessage("alert-danger", result.message);
                 }

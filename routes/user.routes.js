@@ -6,4 +6,6 @@ module.exports = app => {
     app.post('/api/login/process',userController.loginProcess)
 
     app.post('/api/register-land/process', userController.register_landProcess)
+
+    app.post('/api/admin-signup/process', userController.adminSignupProcess)
 }

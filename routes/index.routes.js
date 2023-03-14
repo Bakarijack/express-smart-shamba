@@ -11,4 +11,12 @@ module.exports = app => {
 
     app.get('/register-land',indexController.registerLandPageRender)
 
+    app.get('/registered-lands-list',indexController.registeredLandsList)
+
+    app.get('/admin-signup-page',indexController.adminSignupPageRender)
+
+    app.get('/admin-dashboard', indexController.adminDashboardPageRender)
+
+    app.get('/posted-lands', indexController.postedLands)
+
 }
