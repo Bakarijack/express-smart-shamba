@@ -69,6 +69,8 @@
             document.getElementById('user_email').value = ''
             document.getElementById('password').value = ''
 
+            console.log(result.data)
+            localStorage.setItem('token', result.data)
             setTimeout(() => {
                 if (result.role_id === 3) {
                     document.location = '/client-dashboard'

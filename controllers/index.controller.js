@@ -5,6 +5,6 @@ exports.loginPageRender = (req, res, next) => res.render('login', { layout: 'aut
 
 exports.signupPageRender = (req, res, next) => res.render('signup', { layout: 'auth'})
 
-exports.dashboardPageRender = (req, res, next) => res.render('partials/client_home', { layout: 'client_dashboard' })
+exports.dashboardPageRender = (req, res, next) => res.render('client_home', { layout: false })
 
-exports.registerLandPageRender = (req, res, next) => res.render('partials/register_land', { layout: 'client_dashboard' })
+exports.registerLandPageRender = (req, res, next) => res.render('register_land', { layout: false })

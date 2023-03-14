@@ -77,6 +77,7 @@ exports.loginProcess = async (req, res, next) => {
         console.log(result)
         if (await bcrypt.compare(user_password, result.password)){
             const token = jwt.sign({
+                user_id: result.user_id,
                 user_email: user_email
             }, JWT_SECRET)
 
@@ -90,4 +91,22 @@ exports.loginProcess = async (req, res, next) => {
 
 
     res.json({ 'status': 'error', 'message': 'Invalid email or password', 'e': '1'})
+}
+
+
+exports.register_landProcess =async (req, res, next) => {
+    const {owner_name,id_num,land_num,title_num,seal,date_of_issue,map_num,land_size, token} = req.body
+
+    try{
+        const data = jwt.verify(token, JWT_SECRET)
+        console.log(data)
+
+        const result = await userModal.registerLand(owner_name,data.user_id,id_num,land_num,title_num,seal,date_of_issue,map_num,land_size)
+        console.log(result)
+        return res.json({ 'status': 'ok', 'message': 'Land successfully registered'})
+
+    }catch(e){
+        console.log(e)
+        return res.json({ status: 'error', 'message':'Something went wrong. Try again', 'e': '1'})
+    }
 }

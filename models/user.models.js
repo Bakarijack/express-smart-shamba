@@ -34,7 +34,15 @@ exports.verify_user = async (email, password) => {
 }
 
 exports.getPassword = async email => {
-    const rows = await con.promise().query(`SELECT password,users.role_id FROM users WHERE email ='${email}'`)
+    const rows = await con.promise().query(`SELECT password,users.role_id,users.user_id FROM users WHERE email ='${email}'`)
     console.log(rows[0][0])
     return rows[0][0]
+}
+
+exports.registerLand = async (owner_name,added_by, id_num, land_num, title_num, seal, date_of_issue, map_num, land_size) => {
+    const row = await con.promise().query(`INSERT INTO title_deed (owner,added_by,id,land_num,date_of_issue,title_num,seal,map_num,land_size) 
+    VALUES ('${owner_name}', '${added_by}', '${id_num}','${land_num}', '${date_of_issue}','${title_num}','${seal}','${map_num}','${land_size}')`)
+    console.log(row)
+    
+    return row
 }
