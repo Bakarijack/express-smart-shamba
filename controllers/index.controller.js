@@ -1,4 +1,5 @@
 const landModel = require('../models/lands.model')
+const localStorage = require('node-localstorage')
 
 
 exports.indexPageRender = (req, res, next) => res.render('index')
@@ -18,7 +19,7 @@ exports.registeredLandsList = (req,res,next) =>{
 
 exports.adminSignupPageRender = (req, res, next) => res.render('admin_signup', { layout: 'auth'})
 
-exports.adminDashboardPageRender = (req, res, next) => res.render('admin_home', { layout: false})
+exports.adminDashboardPageRender = (req, res, next) => res.render('admin_home', { layout: 'admin_main'})
 
 exports.postedLands = async (req, res, next) =>{
     let land_list
@@ -29,7 +30,8 @@ exports.postedLands = async (req, res, next) =>{
         console.log(e)
     }
 
+    console.log(req.cookies.token)
     console.log(land_list)
 
-    res.render('admin_posted_lands', { layout : false, all_lands: land_list })
+    res.render('admin_posted_lands', { layout : 'admin_main', all_land_list: land_list })
 } 

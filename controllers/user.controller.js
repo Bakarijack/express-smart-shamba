@@ -81,6 +81,7 @@ exports.loginProcess = async (req, res, next) => {
                 user_email: user_email
             }, JWT_SECRET)
 
+            res.cookie('token',token)
             return res.json({ 'status': 'ok', 'message': 'Successfully signed', 'data': token,'role_id': result.role_id})
         }
     }catch(e){

@@ -13,11 +13,13 @@
     "bcryptjs": "^2.4.3",
     "billboard.js": "^3.7.0-next.3",
     "chart.js": "^4.2.1",
+    "cookie-parser": "^1.4.6",
     "express": "^4.18.2",
     "express-handlebars": "^7.0.2",
     "font-awesome": "^4.7.0",
     "handlebars-pdf": "^1.0.1",
     "jsonwebtoken": "^9.0.0",
-    "mysql2": "^3.2.0"
+    "mysql2": "^3.2.0",
+    "node-localstorage": "^2.2.1"
   }
 }

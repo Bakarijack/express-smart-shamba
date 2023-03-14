@@ -1,253 +1,190 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/client_dashboard.css">
-    <link rel="stylesheet" href="css/register_land.css">
-    <link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
-    <link href="/fontawesome/css/brands.css" rel="stylesheet">
-    <link href="/fontawesome/css/solid.css" rel="stylesheet">
-    <script src="js/bootstrap.js"></script>
-
-</head>
-
-<body>
-    <div class="container-fluid dash-main">
-        <div class="container left-menu">
-            <a href="#" class="mt-3"><img src="/img/logo.svg" class="dash-logo"></a>
-            <div class="container left-bottom">
-                <a href='/client-dashboard'><i class="fa fa-home btn" id="home-btn" aria-hidden="true"></i></a>
-                <a href='/register-land'><i class="fa fa-file-upload btn" id="add-land" aria-hidden="true"></i></a>
-                <a href='/registered-lands-list'><i class="fa fa-file-clipboard btn" aria-hidden="true"></i></a>
-                <a href=""><i class="fa fa-file-export btn" aria-hidden="true"></i></a>
-                <a href=""><i class="fa fa-file-edit btn" aria-hidden="true"></i></a>
+<div class="container-fluid form-section">
+    <h4 class="register-header">Register Land</h4>
+    <div class="alert" id="alertDiv">
+    </div>
+    <div class="row mt-5">
+        <div class="col-lg-8 col-md-12 col-sm-12">
+            <div class="sub-header">
+                <h6 class="section-header">Section : <i class="fa fa-a latter"></i></h6>
+                <p>Title Deed Details</p>
             </div>
-            <div class="container setting-div">
-                <a href=""><i class="fa fa-cog btn" aria-hidden="true"></i></a>
-            </div>
-        </div>
+            <form id="register_form">
+                <div class="container">
+                    <div class="row">
 
-        <div class="container-fluid center-content">
-            <div class="container-fluid form-section">
-                <h4 class="register-header">Register Land</h4>
-                <div class="alert" id="alertDiv">
-                </div>
-                <div class="row mt-5">
-                    <div class="col-lg-8 col-md-12 col-sm-12">
-                        <div class="sub-header">
-                            <h6 class="section-header">Section : <i class="fa fa-a latter"></i></h6>
-                            <p>Title Deed Details</p>
-                        </div>
-                        <form id="register_form">
+                        <div class="col-lg-12 col-md-12 col-sm-12 mt-1">
                             <div class="container">
                                 <div class="row">
 
-                                    <div class="col-lg-12 col-md-12 col-sm-12 mt-1">
-                                        <div class="container">
-                                            <div class="row">
-
-                                                <div class="col-lg-6 col-md-12 col-sm-12">
-                                                    <div class="form-outline">
-                                                        <label class="form-label" for="form6Example1">Owner name</label>
-                                                        <input type="text" id="owner_name" class="form-control"
-                                                            required />
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-6 col-md-12 col-sm-12">
-                                                    <div class="form-outline">
-                                                        <label class="form-label" for="form6Example1">ID</label>
-                                                        <input type="text" id="id_num" class="form-control" required />
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="form6Example1">Owner name</label>
+                                            <input type="text" id="owner_name" class="form-control" required />
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-12 col-md-12 col-sm-12 mt-1">
-                                        <div class="container">
-                                            <div class="row">
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="form6Example1">ID</label>
+                                            <input type="text" id="id_num" class="form-control" required />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                                                <div class="col-lg-6 col-md-12 col-sm-12">
-                                                    <div class="form-outline">
-                                                        <label class="form-label" for="form6Example1">Land
-                                                            number</label>
-                                                        <input type="text" id="land_num" class="form-control"
-                                                            required />
-                                                    </div>
-                                                </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 mt-1">
+                            <div class="container">
+                                <div class="row">
 
-                                                <div class="col-lg-6 col-md-12 col-sm-12">
-                                                    <div class="form-outline">
-                                                        <label class="form-label" for="form6Example1">Title
-                                                            number</label>
-                                                        <input type="text" id="title_num" class="form-control"
-                                                            required />
-                                                    </div>
-                                                </div>
-                                            </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="form6Example1">Land
+                                                number</label>
+                                            <input type="text" id="land_num" class="form-control" required />
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-12 col-md-12 col-sm-12 mt-1">
-                                        <div class="container">
-                                            <div class="row">
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="form6Example1">Title
+                                                number</label>
+                                            <input type="text" id="title_num" class="form-control" required />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
 
-                                                <div class="col-lg-6 col-md-12 col-sm-12">
-                                                    <div class="form-outline">
-                                                        <label class="form-label" for="form6Example1">Seal</label>
-                                                        <input type="text" id="seal" class="form-control" required />
-                                                    </div>
-                                                </div>
+                        <div class="col-lg-12 col-md-12 col-sm-12 mt-1">
+                            <div class="container">
+                                <div class="row">
 
-                                                <div class="col-lg-6 col-md-12 col-sm-12">
-                                                    <div class="form-outline">
-                                                        <label class="form-label" for="form6Example1">Date of
-                                                            issue</label>
-                                                        <input type="date" id="date_of_issue" class="form-control"
-                                                            required />
-                                                    </div>
-                                                </div>
-
-                                            </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="form6Example1">Seal</label>
+                                            <input type="text" id="seal" class="form-control" required />
                                         </div>
                                     </div>
 
-                                    <div class="col-lg-12 col-md-12 col-sm-12 mt-1">
-                                        <div class="container">
-                                            <div class="row">
-
-                                                <div class="col-lg-6 col-md-12 col-sm-12">
-                                                    <div class="form-outline">
-                                                        <label class="form-label" for="form6Example1">Map sheet
-                                                            number</label>
-                                                        <input type="text" id="map_num" class="form-control" required />
-                                                    </div>
-                                                </div>
-
-                                                <div class="col-lg-6 col-md-12 col-sm-12">
-                                                    <div class="form-outline">
-                                                        <label class="form-label" for="form6Example1">Estimated size of
-                                                            land</label>
-                                                        <input type="text" id="land_size" class="form-control"
-                                                            required />
-                                                    </div>
-                                                </div>
-
-                                            </div>
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="form6Example1">Date of
+                                                issue</label>
+                                            <input type="date" id="date_of_issue" class="form-control" required />
                                         </div>
-
-                                    </div>
-
-                                    <div class="col-lg-12 col-md-12 col-sm-12 mt-1">
-                                        <button type="submit"
-                                            class="btn btn-primary btn-block mt-5 col-lg-12 col-md-12 col-sm-12">Register
-                                            land</button>
                                     </div>
 
                                 </div>
                             </div>
-                        </form>
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 mt-1">
+                            <div class="container">
+                                <div class="row">
+
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="form6Example1">Map sheet
+                                                number</label>
+                                            <input type="text" id="map_num" class="form-control" required />
+                                        </div>
+                                    </div>
+
+                                    <div class="col-lg-6 col-md-12 col-sm-12">
+                                        <div class="form-outline">
+                                            <label class="form-label" for="form6Example1">Estimated size of
+                                                land</label>
+                                            <input type="text" id="land_size" class="form-control" required />
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-lg-12 col-md-12 col-sm-12 mt-1">
+                            <button type="submit"
+                                class="btn btn-primary btn-block mt-5 col-lg-12 col-md-12 col-sm-12">Register
+                                land</button>
+                        </div>
+
                     </div>
-                    <div class="col-lg-4 col-md-12 col-sm-12"></div>
                 </div>
-            </div>
+            </form>
         </div>
-
-        <script>
-            const alertDiv1 = document.getElementById('alertDiv')
-            alertDiv1.style.visibility = 'hidden'
-
-            const register_form = document.getElementById('register_form')
-
-            register_form.addEventListener('submit', async (event) => {
-                event.preventDefault()
-
-                console.log('submit clicked')
-
-                const owner_name = document.getElementById('owner_name').value
-                const id_num = document.getElementById('id_num').value
-                const land_num = document.getElementById('land_num').value
-                const title_num = document.getElementById('title_num').value
-                const seal = document.getElementById('seal').value
-                const date_of_issue = document.getElementById('date_of_issue').value
-                const map_num = document.getElementById('map_num').value
-                const land_size = document.getElementById('land_size').value
-
-                //const tkn = localStorage.getItem('token'),
-                const result = await fetch('/api/register-land/process', {
-                    method: 'POST',
-                    headers: {
-                        'content-type': 'application/json'
-                    },
-                    body: JSON.stringify({
-                        owner_name,
-                        id_num,
-                        land_num,
-                        title_num,
-                        seal,
-                        date_of_issue,
-                        map_num,
-                        land_size,
-                        token: localStorage.getItem('token')
-                    })
-                }).then(res => res.json())
-
-                console.log(result)
-                if (result.status === 'ok') {
-                    displayMessage("alert-success", result.message);
-
-                    document.getElementById('owner_name').value = ''
-                    document.getElementById('id_num').value = ''
-                    document.getElementById('land_num').value = ''
-                    document.getElementById('title_num').value = ''
-                    document.getElementById('seal').value = ''
-                    document.getElementById('date_of_issue').value = ''
-                    document.getElementById('map_num').value = ''
-                    document.getElementById('land_size').value = ''
-
-                } else if (result.status === 'error') {
-                    displayMessage("alert-danger", result.message);
-                }
-            })
-
-            function displayMessage(alertClass, message) {
-                const alertDiv = document.getElementById('alertDiv');
-                alertDiv.style.visibility = 'visible'
-                alertDiv.classList.add(alertClass);
-                alertDiv.innerHTML = message;
-
-                setTimeout(() => {
-                    alertDiv.style.visibility = 'hidden'
-                    alertDiv.classList.remove(alertClass);
-                }, 2000)
-
-            }
-        </script>
-
-        <div class="container right-menu">
-            <div class="container top-div">
-                <span>
-                    {{!-- <input type="text" class="search-engine"> --}}
-                    <i class="fa fa-search search-icon" aria-hidden="true"></i>
-                </span>
-                <i class='fa fa-bell'></i>
-                <span><img src="/img/day.jpg" class="profile-pic"></span>
-            </div>
-
-            <div class="container bottom-div">
-                <div class="container bottom-div-1"></div>
-                <div class="container bottom-div-2"></div>
-            </div>
-        </div>
+        <div class="col-lg-4 col-md-12 col-sm-12"></div>
     </div>
+</div>
 
-</body>
+<script>
+    const alertDiv1 = document.getElementById('alertDiv')
+    alertDiv1.style.visibility = 'hidden'
 
-</html>
+    const register_form = document.getElementById('register_form')
+
+    register_form.addEventListener('submit', async (event) => {
+        event.preventDefault()
+
+        console.log('submit clicked')
+
+        const owner_name = document.getElementById('owner_name').value
+        const id_num = document.getElementById('id_num').value
+        const land_num = document.getElementById('land_num').value
+        const title_num = document.getElementById('title_num').value
+        const seal = document.getElementById('seal').value
+        const date_of_issue = document.getElementById('date_of_issue').value
+        const map_num = document.getElementById('map_num').value
+        const land_size = document.getElementById('land_size').value
+
+        //const tkn = localStorage.getItem('token'),
+        const result = await fetch('/api/register-land/process', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                owner_name,
+                id_num,
+                land_num,
+                title_num,
+                seal,
+                date_of_issue,
+                map_num,
+                land_size,
+                token: localStorage.getItem('token')
+            })
+        }).then(res => res.json())
+
+        console.log(result)
+        if (result.status === 'ok') {
+            displayMessage("alert-success", result.message);
+
+            document.getElementById('owner_name').value = ''
+            document.getElementById('id_num').value = ''
+            document.getElementById('land_num').value = ''
+            document.getElementById('title_num').value = ''
+            document.getElementById('seal').value = ''
+            document.getElementById('date_of_issue').value = ''
+            document.getElementById('map_num').value = ''
+            document.getElementById('land_size').value = ''
+
+        } else if (result.status === 'error') {
+            displayMessage("alert-danger", result.message);
+        }
+    })
+
+    function displayMessage(alertClass, message) {
+        const alertDiv = document.getElementById('alertDiv');
+        alertDiv.style.visibility = 'visible'
+        alertDiv.classList.add(alertClass);
+        alertDiv.innerHTML = message;
+
+        setTimeout(() => {
+            alertDiv.style.visibility = 'hidden'
+            alertDiv.classList.remove(alertClass);
+        }, 2000)
+
+    }
+</script>

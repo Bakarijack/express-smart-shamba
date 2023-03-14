@@ -3,8 +3,11 @@ const bodyParser = require('body-parser')
 const indexRoutes = require('./routes/index.routes')
 const userRoutes = require('./routes/user.routes')
 const expressHandlebars = require('express-handlebars')
+const cookieParser = require('cookie-parser')
 
 const app = express()
+
+app.use(cookieParser())
 
 app.use(express.static('public'))
 
