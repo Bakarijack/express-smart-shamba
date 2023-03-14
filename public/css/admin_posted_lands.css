@@ -1,0 +1,58 @@
+.lp-header{
+    margin-top: 2em;
+    font-weight: bold;    
+}
+
+.search-div{
+    margin-left: 0;
+}
+
+/* styles for the search */
+.form{
+
+    position: relative;
+}
+
+.form .fa-search{
+    position: absolute;
+    top:1em;
+    left: 1em;
+    color: #9ca3af;
+}
+
+.form span{
+    position: absolute;
+    right: 1em;
+    top: 0.5em;
+    padding: 0.2em;
+    border-left: 1px solid #d1d5db;
+
+}
+
+.left-pan{
+    padding-left: 0.4em;
+}
+
+.left-pan i{
+   padding-left: 0.5em;
+}
+
+.form-input{
+    height: 2.7em;
+    text-indent: 2em;
+    border-radius: 10px;
+}
+
+.form-input:focus{
+    box-shadow: none;
+    border:none;
+}
+  /* end */
+
+.land-item{
+    margin-top: 2em;
+}
+
+ul > .num{
+    padding: 0.3em 1em;
+}
