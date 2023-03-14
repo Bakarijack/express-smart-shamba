@@ -2,6 +2,7 @@ const express = require('express')
 const bodyParser = require('body-parser')
 const indexRoutes = require('./routes/index.routes')
 const userRoutes = require('./routes/user.routes')
+const landRoutes = require('./routes/land_routes')
 const expressHandlebars = require('express-handlebars')
 const cookieParser = require('cookie-parser')
 
@@ -25,5 +26,6 @@ app.use(bodyParser.urlencoded({ extended:true}))
 
 indexRoutes(app)
 userRoutes(app)
+landRoutes(app)
 
 module.exports = app
