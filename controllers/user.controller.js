@@ -95,24 +95,6 @@ exports.loginProcess = async (req, res, next) => {
 }
 
 
-exports.register_landProcess =async (req, res, next) => {
-    const {owner_name,id_num,land_num,title_num,doc_file,date_of_issue,map_num,land_size, token} = req.body
-
-    try{
-        const data = jwt.verify(token, JWT_SECRET)
-        console.log(data)
-
-        const result = await userModal.registerLand(owner_name,data.user_id,id_num,land_num,title_num,doc_file,date_of_issue,map_num,land_size)
-        console.log(result)
-        return res.json({ 'status': 'ok', 'message': 'Land successfully registered'})
-
-    }catch(e){
-        console.log(e)
-        return res.json({ status: 'error', 'message':'Something went wrong. Try again', 'e': '1'})
-    }
-}
-
-
 exports.adminSignupProcess = async (req, res, next) => {
     console.log(req.body)
 
