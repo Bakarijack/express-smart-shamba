@@ -43,6 +43,9 @@ exports.update_td_verification = async (req, res, next) => {
 
         const title_deed_data = await landModal.getTittleDeedData(tId)
         console.log(title_deed_data)
+
+        const owner_data = await userModal.getOwnerEmail(title_deed_data.added_by)
+        console.log(owner_data.email)
         // add to smart contract
         
 

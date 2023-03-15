@@ -47,6 +47,12 @@ exports.update_verification = async (title_deed_id) => {
 exports.getTittleDeedData = async title_deed_id => {
     const rows = await con.promise().query(`SELECT * FROM title_deed WHERE title_deed_id = '${title_deed_id}'`)
     console.log(rows[0][0])
-    
+
     return rows[0][0]
+}
+
+exports.getOwnerEmail = async (user_id) => {
+    const rows = await con.promise().query(`SELECT email FROM users WHERE user_id='${user_id}'`)
+    console.log(rows[0][0])
+    return rows[0][0]    
 }

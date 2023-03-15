@@ -84,12 +84,16 @@
             td_div.append(img)
 
             Swal.fire(
-                'Good job!',
-                'You clicked the button!',
+                'Verified successfully!',
+                '',
                 'success'
             )
         } else if (result.status === 'error') {
-
+            Swal.fire(
+                'Oops! something went wrong',
+                '',
+                'error'
+            )
         }
 
     }
