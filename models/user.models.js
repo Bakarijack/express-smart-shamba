@@ -54,3 +54,8 @@ exports.getOwnerEmail = async (user_id) => {
     return rows[0][0]    
 }
 
+exports.getUsername = async (email) => {
+    const rows = await con.promise().query(`SELECT username FROM users WHERE email='${email}'`)
+    console.log(rows[0][0])
+    return rows[0][0]  
+}

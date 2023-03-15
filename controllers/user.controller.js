@@ -145,3 +145,21 @@ exports.adminSignupProcess = async (req, res, next) => {
         return res.json({ 'status': 'error', 'message': 'Something went wrong. Try again', 'e': '3'})
     }    
 }
+
+
+exports.getCurrentUsername = async (req,res,next) => {
+    const {token} = req.body
+
+    try{
+        const user = jwt.verify(token, JWT_SECRET)
+        console.log(user)
+
+        const username = await userModal.getUsername(user.user_email)
+        console.log(username.username)
+
+        return res.json({'status': 'ok', 'message': 'Data returned', 'username': username.username, 'email': user.user_email})
+    }catch(e){
+        return res.json({ 'status': 'error', 'message': 'Something went wrong'})
+    }
+    res.json({'status':'ok', 'message':'data received'})
+}
