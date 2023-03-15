@@ -38,12 +38,16 @@ exports.update_td_verification = async (req, res, next) => {
     console.log(token)
 
     try{
-        const data = jwt.verify(token, JWT_SECRET)
-        console.log(data)
+        const user = jwt.verify(token, JWT_SECRET)
+        console.log(user)
 
+        const title_deed_data = await landModal.getTittleDeedData(tId)
+        console.log(title_deed_data)
         // add to smart contract
+        
 
         // update database
+        
     }catch(e){
         console.log(e)
         return res.json({ 'status': 'ok', 'message': 'Something went wrong. Try again'})
