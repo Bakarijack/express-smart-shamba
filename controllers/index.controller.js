@@ -14,7 +14,7 @@ exports.registerLandPageRender = (req, res, next) => res.render('register_land',
 
 exports.registeredLandsList = (req,res,next) =>{
     console.log(req.headers.cookie)
-    res.render('registered_lands_list', {layout: false})
+    res.render('registered_lands_list', {layout: 'client_main'})
 }
 
 exports.adminSignupPageRender = (req, res, next) => res.render('admin_signup', { layout: 'auth'})
@@ -32,6 +32,12 @@ exports.postedLands = async (req, res, next) =>{
 
     console.log(req.cookies.token)
     console.log(land_list)
+    console.log(land_list.length)
 
-    res.render('admin_posted_lands', { layout : 'admin_main', all_land_list: land_list })
+    res.render('admin_posted_lands', { layout : 'admin_main', land_list })
 } 
+
+
+exports.logoutPage = (req,res,next) => {
+    
+}

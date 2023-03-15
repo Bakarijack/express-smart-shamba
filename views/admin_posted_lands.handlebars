@@ -21,20 +21,27 @@
                         <th scope="col">#</th>
                         <th scope="col">Title deed no.</th>
                         <th scope="col">Land size</th>
-                        <th scope="col">Location</th>
+                        <th scope="col">Date of issue</th>
                         <th scope="col">verification status</th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    {{#each all_land_list}}
+                    {{#each this}}
                     <tr>
-                        <th scope="row">1</th>
+                        {{#if title_deed_id}}
+                        <th scope="row">{{title_deed_id}}</th>
                         <td>{{title_num}}</td>
-                        <td>Otto</td>
-                        <td>@mdo</td>
-                        <td>@mdo</td>
+                        <td>{{land_size}}</td>
+                        <td>{{date_of_issue}}</td>
+                        {{#if is_verified}}
+                        <td><img src="/img/verify4.png"></td>
+                        {{else}}
+                        <td><i class="fa fa-info-circle btn p-0" onclick="update_verification({{title_deed_id}})"></i>
+                        </td>
+                        {{/if}}
                         <td><i class="fa fa-trash-alt"></i></td>
+                        {{/if}}
                     </tr>
                     {{/each}}
                 </tbody>
@@ -45,3 +52,9 @@
         </div>
     </div>
 </div>
+
+<script>
+    function update_verification(tId) {
+        console.log(tId)
+    }
+</script>
