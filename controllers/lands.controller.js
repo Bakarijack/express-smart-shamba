@@ -26,6 +26,28 @@ exports.register_landProcess =async (req, res, next) => {
 
     }catch(e){
         console.log(e)
-        return res.json({ status: 'error', 'message':'Something went wrong. Try again', 'e': '1'})
+        return res.json({ 'status': 'error', 'message':'Something went wrong. Try again', 'e': '1'})
     }
+}
+
+
+exports.update_td_verification = async (req, res, next) => {
+    const { tId, token} = req.body
+
+    console.log(tId)
+    console.log(token)
+
+    try{
+        const data = jwt.verify(token, JWT_SECRET)
+        console.log(data)
+
+        // add to smart contract
+
+        // update database
+    }catch(e){
+        console.log(e)
+        return res.json({ 'status': 'ok', 'message': 'Something went wrong. Try again'})
+    }
+
+    res.json({'status': 'ok', 'message': 'data received'})
 }

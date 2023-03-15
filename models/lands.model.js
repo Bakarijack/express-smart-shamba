@@ -34,3 +34,12 @@ exports.getLocation = async (country,city,street) => {
     }
 
 }
+
+
+exports.update_verification = async (title_deed_id) => {
+    const result = await con.promise().query(`UPDATE title_deed SET is_verified ='1' WHERE title_deed_id = '${title_deed_id}'`)
+
+    console.log(result)
+
+    return result
+}

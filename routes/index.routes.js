@@ -19,4 +19,6 @@ module.exports = app => {
 
     app.get('/posted-lands', indexController.postedLands)
 
+    app.get('/logout', indexController.logoutPage)
+
 }

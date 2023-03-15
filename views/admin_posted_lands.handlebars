@@ -37,7 +37,8 @@
                         {{#if is_verified}}
                         <td><img src="/img/verify4.png"></td>
                         {{else}}
-                        <td><i class="fa fa-info-circle btn p-0" onclick="update_verification({{title_deed_id}})"></i>
+                        <td id="{{title_deed_id}}v"><i id="{{title_deed_id}}" class="fa fa-info-circle btn p-0"
+                                onclick="update_verification({{title_deed_id}})"></i>
                         </td>
                         {{/if}}
                         <td><i class="fa fa-trash-alt"></i></td>
@@ -54,7 +55,42 @@
 </div>
 
 <script>
-    function update_verification(tId) {
+    async function update_verification(tId) {
         console.log(tId)
+
+        const result = await fetch('/api/update-td-verification', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({
+                tId,
+                token: localStorage.getItem('token')
+            })
+        }).then(res => res.json())
+
+        console.log(result)
+
+        if (result.status === 'ok') {
+            const t_div = tId + 'v'
+            const td_div = document.getElementById(t_div)
+
+            const i_div = document.getElementById(tId)
+            i_div.remove()
+
+            const img = document.createElement('img')
+            img.setAttribute('src', '/img/verify4.png')
+
+            td_div.append(img)
+
+            Swal.fire(
+                'Good job!',
+                'You clicked the button!',
+                'success'
+            )
+        } else if (result.status === 'error') {
+
+        }
+
     }
 </script>
