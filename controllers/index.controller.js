@@ -1,5 +1,9 @@
+const userModal = require('../models/user.models')
+const db_creation = require('../models/db_creation')
+const con = require('../config/db_connection')
+const jwt = require('jsonwebtoken')
+const JWT_SECRET = 'sbvidsvuibdsbvdsibvuidksvjdksuciv@423sbdbvodsb'
 const landModel = require('../models/lands.model')
-const localStorage = require('node-localstorage')
 
 
 exports.indexPageRender = (req, res, next) => res.render('index')
@@ -12,9 +16,23 @@ exports.dashboardPageRender = (req, res, next) => res.render('client_home', { la
 
 exports.registerLandPageRender = (req, res, next) => res.render('register_land', { layout: 'client_main' })
 
-exports.registeredLandsList = (req,res,next) =>{
-    console.log(req.headers.cookie)
-    res.render('registered_lands_list', {layout: 'client_main'})
+exports.registeredLandsList = async (req,res,next) =>{
+    console.log(req.cookies.token)
+
+    let land_list
+    
+    try{
+        const user = jwt.verify(req.cookies.token,JWT_SECRET)
+        console.log(user)
+
+        land_list = await landModel.getUserPostedLands(user.user_id)
+    }catch(e){
+        console.log(e)
+    }
+
+    console.log(land_list)
+
+    res.render('registered_lands_list', {layout: 'client_main', land_list:land_list})
 }
 
 exports.adminSignupPageRender = (req, res, next) => res.render('admin_signup', { layout: 'auth'})
@@ -34,7 +52,7 @@ exports.postedLands = async (req, res, next) =>{
     console.log(land_list)
     console.log(land_list.length)
 
-    res.render('admin_posted_lands', { layout : 'admin_main', land_list })
+    res.render('admin_posted_lands', { layout : 'admin_main', land_list:land_list })
 } 
 
 

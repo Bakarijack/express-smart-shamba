@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="css/client_home.css">
     <link rel="stylesheet" href="css/register_land.css">
     <link rel="stylesheet" href="css/registered_lands_list.css">
+    <link rel="stylesheet" href="css/admin_posted_lands.css">
     <link href="/fontawesome/css/fontawesome.css" rel="stylesheet">
     <link href="/fontawesome/css/brands.css" rel="stylesheet">
     <link href="/fontawesome/css/solid.css" rel="stylesheet">
@@ -32,7 +33,7 @@
                 <a href=""><i class="fa fa-file-edit btn" aria-hidden="true"></i></a>
             </div>
             <div class="container setting-div">
-                <a href=""><i class="fa fa-power-off mt-2 logout btn" aria-hidden="true"></i></a>
+                <a id="logoutBtn"><i class="fa fa-power-off mt-2 logout btn" aria-hidden="true"></i></a>
                 <a href=""><i class="fa fa-cog btn" aria-hidden="true"></i></a>
             </div>
         </div>
@@ -57,6 +58,44 @@
             </div>
         </div>
     </div>
+
+
+    <script>
+        const logoutBtn = document.getElementById('logoutBtn')
+
+        logoutBtn.addEventListener('click', async (event) => {
+            event.preventDefault()
+
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You will be logged out of the system!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, logout!'
+            }).then(async (result) => {
+                if (result.isConfirmed) {
+
+                    localStorage.clear()
+                    document.location = '/logout'
+                    const resl = await fetch('/logout', {
+                        method: 'GET',
+                        headers: {
+                            'content-type': 'application/json'
+                        },
+
+                    }).then(res => json())
+                    /*Swal.fire(
+                        'Logout!',
+                        '',
+                        'success'
+                    )*/
+                }
+            })
+
+        })
+    </script>
 
     <script src="js/sweetalert2.min.js"></script>
 </body>

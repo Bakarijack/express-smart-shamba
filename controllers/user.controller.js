@@ -161,5 +161,4 @@ exports.getCurrentUsername = async (req,res,next) => {
     }catch(e){
         return res.json({ 'status': 'error', 'message': 'Something went wrong'})
     }
-    res.json({'status':'ok', 'message':'data received'})
 }

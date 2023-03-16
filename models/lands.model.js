@@ -5,9 +5,9 @@ const db_creation = require('./db_creation')
 
 exports.getPostedLands = async () => {
     const rows = await con.promise().query(`SELECT * FROM title_deed WHERE 1`)
-    console.log(rows[0][0])
+    console.log('row data = ',rows[0])
 
-    return rows[0][0]
+    return rows[0]
 }
 
 
@@ -46,8 +46,15 @@ exports.update_verification = async (title_deed_id) => {
 
 exports.getTittleDeedData = async title_deed_id => {
     const rows = await con.promise().query(`SELECT * FROM title_deed WHERE title_deed_id = '${title_deed_id}'`)
-    console.log(rows[0][0])
+    console.log("row data = ",rows[0][0])
 
     return rows[0][0]
 }
 
+
+exports.getUserPostedLands = async userId => {
+    const rows = await con.promise().query(`SELECT * FROM title_deed WHERE added_by='${userId}'`)
+    console.log('row data = ',rows[0])
+
+    return rows[0]
+}
