@@ -50,11 +50,14 @@ exports.update_td_verification = async (req, res, next) => {
         
 
         // update database
+        const rlst = await landModal.update_verification(title_deed_data.title_deed_id)
+        console.log(rlst)
         
+        return res.json({'status': 'ok', 'message': 'data received'})
     }catch(e){
         console.log(e)
         return res.json({ 'status': 'ok', 'message': 'Something went wrong. Try again'})
     }
 
-    res.json({'status': 'ok', 'message': 'data received'})
+    
 }

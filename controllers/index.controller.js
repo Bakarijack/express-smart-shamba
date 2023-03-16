@@ -39,5 +39,6 @@ exports.postedLands = async (req, res, next) =>{
 
 
 exports.logoutPage = (req,res,next) => {
-    res.redirect('/logout')
+    res.clearCookie("token")
+    res.redirect('/')
 }
