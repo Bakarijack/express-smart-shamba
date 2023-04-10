@@ -1,3 +1,4 @@
+![Screenshot from 2023-03-12 01-16-20](https://user-images.githubusercontent.com/73841719/230871586-72a22c41-7e05-4824-b120-da4f7f5d198c.png)
 # Shamba
 
 #steps to follow in order to run this project
